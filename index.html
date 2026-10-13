@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk 2077: Pixel Side Racer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="480" height="270"></canvas>
+
+        <div id="hud" class="hidden">
+            <div class="hud-top-left">
+                <div class="score-panel">
+                    <span class="label">ДИСТАНЦИЯ</span>
+                    <span id="score">0</span><span class="unit">М</span>
+                </div>
+                <div class="high-score-panel">
+                    <span class="label">РЕКОРД</span>
+                    <span id="highScoreDisplay">0</span>
+                </div>
+            </div>
+
+            <div id="progressbar-container">
+                <div class="pb-label">ПОЗИЦИИ</div>
+                <canvas id="progressbar" width="240" height="40"></canvas>
+            </div>
+
+            <div class="hud-top-right">
+                <div class="position-panel">
+                    <span class="label">ПОЗИЦИЯ</span>
+                    <span id="positionValue">1/5</span>
+                </div>
+                <div class="lap-panel">
+                    <span class="label">КРУГ</span>
+                    <span id="lapValue">1/3</span>
+                </div>
+                <div class="time-panel">
+                    <span class="label">ВРЕМЯ</span>
+                    <span id="timeDisplay">00:00</span>
+                </div>
+            </div>
+
+            <div class="hud-bottom">
+                <div class="speed-panel">
+                    <div class="speed-value">
+                        <span id="speedValue">0</span>
+                        <span class="unit">КМ/Ч</span>
+                    </div>
+                    <div class="gear-value" id="gearValue">N</div>
+                </div>
+
+                <div class="nos-panel">
+                    <span class="label">NITRO</span>
+                    <div class="nos-bar-container"><div class="nos-bar" id="nosBar"></div></div>
+                    <span class="nos-hint">SHIFT для ускорения</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="startScreen" class="screen">
+            <div class="logo-container">
+                <h1 class="cyber-logo">CYBER<span>PUNK</span></h1>
+                <h2 class="subtitle">2 0 7 7 // PIXEL RACER</h2>
+            </div>
+            <button id="startBtn" class="cyber-btn">ЗАПУСТИТЬ ДВИГАТЕЛЬ</button>
+            <div class="controls-info">
+                <p><span>W / D / →</span> - Газ</p>
+                <p><span>S / A / ←</span> - Тормоз / Задний ход</p>
+                <p><span>SHIFT</span> - Нитро (NOS)</p>
+            </div>
+        </div>
+
+        <div id="gameOverScreen" class="screen hidden">
+            <h1 class="game-over-text">ФИНИШ</h1>
+            <div class="final-stats">
+                <p>ПОЗИЦИЯ: <span id="finalPosition">1</span></p>
+                <p>ДИСТАНЦИЯ: <span id="finalScore">0</span> М</p>
+                <p>МАКС. СКОРОСТЬ: <span id="finalSpeed">0</span> КМ/Ч</p>
+                <p>ОБЩЕЕ ВРЕМЯ: <span id="finalTime">00:00</span></p>
+                <p class="new-record hidden" id="newRecordText">НОВЫЙ РЕКОРД!</p>
+                <p>ЛУЧШИЙ РЕЗУЛЬТАТ: <span id="finalHighScore">0</span> М</p>
+            </div>
+            <button id="restartBtn" class="cyber-btn pink-btn">НОВАЯ ГОНКА</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
